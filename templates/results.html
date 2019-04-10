@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block content %}
+<section class="feature_area p_120">
+            <div class="container">
+                <div class="main_title">
+                    <div class="banner_content text-center">
+                    <h3>Hasil Pencarian</h3>
+                    </div>
+                     <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                 {% for book in books %}
+                    <div class="card border-primary col-md-3" style="width: 12rem">
+                        <div class="card-body">
+                            <h4 class="card-title">{{book['title']}}</h4>
+                            <h6 class="card-text">{{book['author']}}</h6>
+                            <h6 class="card-text">{{book['year']}}</h6>
+                            <h6 class="card-text">{{book['isbn']}}</h6>
+                        </div>
+                        <div class="card-footer">
+                            <a href="/book/{{book['isbn']}}" class="card-link">Rincian lebih lanjut</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+                </div>
+            </div>
+        </section>
+   
+    <div class="container">
+       
+    </div>
+
+{% endblock %}
